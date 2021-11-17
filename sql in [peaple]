@@ -12,7 +12,18 @@ people.insert(0, ['name', 'age', 'sex', 'city'])
 def sql(mass, arg, val, *args):
     filtr = []
     if arg in mass[0]:
-        for i in mass:
-            if i[mass[0].index(arg)] == val:
-                filtr.append(i)
-    return filtr   
+        if len(args) == 0:
+            for i in mass:
+                if i[mass[0].index(arg)] == val:
+                    filtr.append(i)
+        elif len(args) == 2:
+            for i in mass:
+                if i[mass[0].index(arg)] == val and i[mass[0].index(args[0])] == args[1]: 
+                    filtr.append(i)
+        else:
+            for i in mass:
+                if i[mass[0].index(arg)] == val and i[mass[0].index(args[0])] == args[1] and i[mass[0].index(args[2])] == args[3]: 
+                    filtr.append(i)
+     return filtr        
+                
+    
