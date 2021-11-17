@@ -1,0 +1,10 @@
+import random as rd
+people = []
+for i in range(5000):
+    vr = []
+    vr.append(''.join(rd.choices([*'йцукенгшщзхъфывапролджэячсмитьбю'], k=5))) # name
+    vr.append(rd.randint(18, 69)) # age
+    vr.append(rd.choice(['f', 'm'])) # sex
+    vr.append(rd.choice(['msk', 'spb', 'ekb', 'chlb', 'ervn', 'nrsl'])) # city
+    people.append(vr)
+people.insert(0, ['name', 'age', 'sex', 'city'])
