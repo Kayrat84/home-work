@@ -8,3 +8,11 @@ for i in range(5000):
     vr.append(rd.choice(['msk', 'spb', 'ekb', 'chlb', 'ervn', 'nrsl'])) # city
     people.append(vr)
 people.insert(0, ['name', 'age', 'sex', 'city'])
+
+def sql(mass, arg, val, *args):
+    filtr = []
+    if arg in mass[0]:
+        for i in mass:
+            if i[mass[0].index(arg)] == val:
+                filtr.append(i)
+    return filtr   
