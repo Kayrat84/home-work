@@ -1,0 +1,12 @@
+chislo = input()[::-1]
+mas = [*chislo]
+mas1 = []
+for i in range(len(mas)//3):
+    mas1.append(''.join(mas[:3]))
+    mas1.append(',')
+    del mas[:3]
+if len(mas) != 0:
+    mas1.append(''.join(mas)) 
+if mas1[-1] == ',':
+    mas1.pop(-1)
+print(''.join(mas1)[::-1]) 
