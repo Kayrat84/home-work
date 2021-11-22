@@ -1,0 +1,16 @@
+def phonetic(slovo):
+    dct = {
+        'Гласная': [*'уеыаоэёяию'],
+        'Согласная': [*'йцкнгшщзхфвпрлджчсмтб'],
+        'Шипящая': [*'щшжч'],
+        'Звонкая': [*'дзбвгжлмнр'],
+        'Глухая':[*'кпстфц']
+           }
+    for i in slovo.lower():
+        harakteristic = []
+        for k in dct:
+            if i in dct[k]:
+                harakteristic.append(k)
+        if i in [*'яеюёиь'] and slovo[slovo.index(i)-1] in dct['Согласная']:
+            harakteristic.append('Мягкая')
+        print(i, '-', ', '.join(harakteristic))
