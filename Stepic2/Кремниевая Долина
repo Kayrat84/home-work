@@ -1,0 +1,14 @@
+n = int(input(''))
+q =[]
+for i in range(n):
+    q.append(input(''))
+res = ''
+for i in range(len(q)):
+    a = q[i].find('a')
+    n = q[i].find('n', a, len(q[i]))
+    t = q[i].find('t', n, len(q[i]))
+    o = q[i].find('o', t, len(q[i]))
+    n1 = q[i].find('n', o, len(q[i]))
+    if a<n<t<o<n1:
+        res+=str(i+1) + ' '
+print(res)
