@@ -1,0 +1,22 @@
+matrix = []
+for i in range(12):
+    matrix.append([])
+    for j in range(12):
+        matrix[i].append('. ')
+cols = [*'qwabcdefghij']
+rows = [*'lm1234567890']
+st = input('')
+m = cols.index(st[0])
+n = rows.index(st[1])
+matrix[9-n][m-2] = 'N '
+for i in [-2,2]:
+    for j in [-1,1]:
+        matrix[9-n+i][m-2+j] = '* ' 
+        matrix[9-n+j][m-2+i] = '* ' 
+for i in range(8):
+    for j in range(8):
+        print(matrix[i][j], end = ' ')
+    print('')
+
+    
+        
